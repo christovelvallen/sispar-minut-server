@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "directory_posts",
+  "info": {
+    "singularName": "directory-post",
+    "pluralName": "directory-posts",
+    "displayName": "Directory Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "address": {
+      "type": "text"
+    },
+    "location": {
+      "type": "text"
+    },
+    "price_rates": {
+      "type": "string"
+    },
+    "opening_hours": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "directory_posts"
+    },
+    "directory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::directory.directory",
+      "inversedBy": "directory_posts"
+    },
+    "publish": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

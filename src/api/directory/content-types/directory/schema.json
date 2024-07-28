@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "directories",
+  "info": {
+    "singularName": "directory",
+    "pluralName": "directories",
+    "displayName": "Directory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "directory_posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::directory-post.directory-post",
+      "mappedBy": "directory"
+    }
+  }
+}
